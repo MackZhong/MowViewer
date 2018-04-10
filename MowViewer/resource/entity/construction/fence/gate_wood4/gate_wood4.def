@@ -1,0 +1,28 @@
+{game_entity
+    (include "/properties/construction.inc")
+	{Extension "gate_wood4.mdl"}
+	{props "gate" "wood" "lock" "construction" "parts" "no_destroyed_stamp" "disable_area" "burning" "small"}
+
+	("armor_light" args 0.7)
+	{Volume "body1"
+		{thickness 3}
+		{tags "body"}
+	}
+	{Volume "body"
+		{thickness 3}
+		{tags "body"}
+	}
+	{Volume "gate_l"
+		{thickness 3}
+		{tags "body" "fire"}
+	}
+	{Volume "lock"
+		{thickness 3}
+		{able {visible 0}}
+	}
+	{Volume "gate_r"
+		{thickness 3}
+		{tags "body" "fire"}
+	}
+	{lodclass "decor_medium"}
+}

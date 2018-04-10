@@ -1,0 +1,21 @@
+{game_entity
+	(include "/properties/construction.inc")
+	{ObstacleId "construction"}
+	{collider "particle.big"}
+	{simulation {able 1}}
+	{Extension "dtruck1.mdl"}
+	{props "steel" "dead_vehicle" "big" "part"}
+	{TexMods
+		{"1" "1"}
+		{"2" "2"}
+		{"3" "3"}
+	}
+	{volume	"body1"
+		{thickness 8}
+		{tags "body"}
+	}
+	{volume	"body2"
+		{thickness 10}
+		{tags "body"}
+	}
+}
