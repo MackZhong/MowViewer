@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/decor/grate_sh04"}
-	{blend test}
-	{tile}
-}

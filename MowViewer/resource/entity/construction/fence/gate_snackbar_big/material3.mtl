@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/entourage/wall_light"}
-	{blend test}
-	{tile}
-}

@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/fence/fence_stone"}
-	{blend none}
-	{tile}
-}

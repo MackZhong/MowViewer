@@ -1,7 +1,0 @@
-{game_entity
-	{Extension "down_corner_x.mdl"}
-	{Volume "piece01"
-	}
-	{Volume "piece02"
-	}
-}

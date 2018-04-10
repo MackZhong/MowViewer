@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "star_darken"}
-	{blend add}
-}

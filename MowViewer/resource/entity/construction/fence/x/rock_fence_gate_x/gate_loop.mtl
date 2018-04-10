@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/entourage/eg_tank"}
-	{blend none}
-}

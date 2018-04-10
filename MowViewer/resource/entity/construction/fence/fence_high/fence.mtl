@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/fence/fence_bush"}
-	{blend none}
-}

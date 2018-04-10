@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/model/tradevan_u_xx"}
-	{blend test}
-	{tile}
-}

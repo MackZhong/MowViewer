@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/fence/decor_agl3"}
-	{blend none}
-	{tile}
-}

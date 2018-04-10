@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/fence/wooden_gate1_x"}
-	{blend test}
-}

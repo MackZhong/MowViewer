@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/entourage/entourage"}
-	{blend none}
-	{tile}
-}

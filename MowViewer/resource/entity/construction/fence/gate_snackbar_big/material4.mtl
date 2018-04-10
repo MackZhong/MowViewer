@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/decor/metalgate_128"}
-	{blend blend}
-	{tile}
-}

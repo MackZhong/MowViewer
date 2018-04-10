@@ -1,5 +1,0 @@
-{material simple
-	{diffuse "$/roof/roof_gate"}
-	{blend none}
-	{tile}
-}

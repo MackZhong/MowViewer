@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/fence/rock_forging_col"}
-	{blend none}
-}

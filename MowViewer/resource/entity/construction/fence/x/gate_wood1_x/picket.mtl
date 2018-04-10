@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/fence/picket_x"}
-	{blend none}
-}

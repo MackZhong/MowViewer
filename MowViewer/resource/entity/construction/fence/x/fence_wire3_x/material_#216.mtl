@@ -1,6 +1,0 @@
-{material simple
-	{diffuse "$/entourage/entourage_a"
-		{AlphaChannel 0}
-	}
-	{tile}
-}

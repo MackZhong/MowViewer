@@ -1,4 +1,0 @@
-{game_entity
-	{obstacleId "tank"}
-	{Extension "car-dead1_x.mdl"}
-}

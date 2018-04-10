@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/fence/new_wall"}
-	{blend none}
-}

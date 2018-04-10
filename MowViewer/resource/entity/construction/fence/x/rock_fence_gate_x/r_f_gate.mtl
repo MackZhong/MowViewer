@@ -1,4 +1,0 @@
-{material simple
-	{diffuse "$/fence/rock_gate"}
-	{blend none}
-}
