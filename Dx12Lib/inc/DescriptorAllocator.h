@@ -8,7 +8,7 @@
 #include "d3dx12.h"
 
 #include <wrl.h>
-
+using namespace Microsoft::WRL;
 #include <cstdint>
 #include <vector>
 
@@ -32,11 +32,11 @@ public:
 protected:
 
 private:
-    using DescriptorHeapPool = std::vector< Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> >;
+    using DescriptorHeapPool = std::vector< ComPtr<ID3D12DescriptorHeap> >;
 
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> CreateHeap();
+    ComPtr<ID3D12DescriptorHeap> CreateHeap();
 
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_CurrentHeap;
+    ComPtr<ID3D12DescriptorHeap> m_CurrentHeap;
     CD3DX12_CPU_DESCRIPTOR_HANDLE m_CurrentHandle;
     D3D12_DESCRIPTOR_HEAP_TYPE m_HeapType;
 

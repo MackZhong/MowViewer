@@ -50,8 +50,8 @@ RootSignature::RootSignature(
     versionRootSignatureDesc.Init_1_1(numParameters, pParameters, numStaticSamplers, pStaticSamplers, flags);
 
     // Serialize the root signature.
-    Microsoft::WRL::ComPtr<ID3DBlob> rootSignatureBlob;
-    Microsoft::WRL::ComPtr<ID3DBlob> errorBlob;
+    ComPtr<ID3DBlob> rootSignatureBlob;
+    ComPtr<ID3DBlob> errorBlob;
     ThrowIfFailed(D3DX12SerializeVersionedRootSignature(&versionRootSignatureDesc,
         m_RootSignatureVersion, &rootSignatureBlob, &errorBlob));
 

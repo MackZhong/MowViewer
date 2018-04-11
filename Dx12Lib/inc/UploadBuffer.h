@@ -6,7 +6,7 @@
 
 #include <wrl.h>
 #include <d3d12.h>
-
+using namespace Microsoft::WRL;
 #include <memory>
 #include <deque>
 
@@ -69,7 +69,7 @@ private:
 
     private:
 
-        Microsoft::WRL::ComPtr<ID3D12Resource> m_d3d12Resource;
+        ComPtr<ID3D12Resource> m_d3d12Resource;
 
         // Base pointer.
         void* m_CPUPtr;
@@ -91,7 +91,7 @@ private:
     PagePool m_PagePool;
     PagePool m_AvailablePages;
 
-    Microsoft::WRL::ComPtr<ID3D12Device2> m_d3d12Device;
+    ComPtr<ID3D12Device2> m_d3d12Device;
     std::shared_ptr<Page> m_CurrentPage;
 
     // The size of each page of memory.

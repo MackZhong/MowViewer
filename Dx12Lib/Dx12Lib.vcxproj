@@ -61,6 +61,9 @@
     <ClCompile Include="src\UploadBuffer.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{A420E479-0661-4C8E-83E4-AFF2ABCB0A59}</ProjectGuid>

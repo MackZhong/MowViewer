@@ -7,10 +7,10 @@
 
 #include <DirectXMath.h>
 #include <d3d12.h>
-
 #include <wrl.h>
+using namespace Microsoft::WRL;
 
- // Vertex struct holding position, normal vector, and texture mapping information.
+// Vertex struct holding position, normal vector, and texture mapping information.
 struct VertexPositionNormalTexture
 {
     VertexPositionNormalTexture()
@@ -62,10 +62,10 @@ private:
 
     void Initialize(ID3D12GraphicsCommandList* deviceContext, VertexCollection& vertices, IndexCollection& indices, bool rhcoords);
 
-    Microsoft::WRL::ComPtr<ID3D12Resource> m_VertexBuffer;
-    Microsoft::WRL::ComPtr<ID3D12Resource> m_VertexBufferUpload;
-    Microsoft::WRL::ComPtr<ID3D12Resource> m_IndexBuffer;
-    Microsoft::WRL::ComPtr<ID3D12Resource> m_IndexBufferUpload;
+    ComPtr<ID3D12Resource> m_VertexBuffer;
+    ComPtr<ID3D12Resource> m_VertexBufferUpload;
+    ComPtr<ID3D12Resource> m_IndexBuffer;
+    ComPtr<ID3D12Resource> m_IndexBufferUpload;
 
     D3D12_VERTEX_BUFFER_VIEW m_VertexBufferView;
     D3D12_INDEX_BUFFER_VIEW m_IndexBufferView;

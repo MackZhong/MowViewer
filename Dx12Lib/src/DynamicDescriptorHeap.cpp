@@ -56,9 +56,9 @@ void DynamicDescriptorHeap::StageDescriptors(uint32_t rootParameterIndex, uint32
 
 
 
-Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> DynamicDescriptorHeap::RequestDescriptorHeap()
+ComPtr<ID3D12DescriptorHeap> DynamicDescriptorHeap::RequestDescriptorHeap()
 {
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> descriptorHeap;
+    ComPtr<ID3D12DescriptorHeap> descriptorHeap;
     if (!m_AvailableDescriptorHeaps.empty())
     {
         descriptorHeap = m_AvailableDescriptorHeaps.front();
@@ -73,7 +73,7 @@ Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> DynamicDescriptorHeap::RequestDescr
     return descriptorHeap;
 }
 
-Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> DynamicDescriptorHeap::CreateDescriptorHeap()
+ComPtr<ID3D12DescriptorHeap> DynamicDescriptorHeap::CreateDescriptorHeap()
 {
     auto device = Application::Get().GetDevice();
 
@@ -82,7 +82,7 @@ Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> DynamicDescriptorHeap::CreateDescri
     descriptorHeapDesc.NumDescriptors = m_NumDescriptorsPerHeap;
     descriptorHeapDesc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_SHADER_VISIBLE;
 
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> descriptorHeap;
+    ComPtr<ID3D12DescriptorHeap> descriptorHeap;
     ThrowIfFailed(device->CreateDescriptorHeap(&descriptorHeapDesc, IID_PPV_ARGS(&descriptorHeap)));
 
     return descriptorHeap;

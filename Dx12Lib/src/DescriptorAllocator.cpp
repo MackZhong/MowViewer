@@ -31,7 +31,7 @@ D3D12_CPU_DESCRIPTOR_HANDLE DescriptorAllocator::Allocate(uint32_t numDescriptor
     return ret;
 }
 
-Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> DescriptorAllocator::CreateHeap()
+ComPtr<ID3D12DescriptorHeap> DescriptorAllocator::CreateHeap()
 {
     auto device = Application::Get().GetDevice();
 
@@ -39,7 +39,7 @@ Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> DescriptorAllocator::CreateHeap()
     heapDesc.Type = m_HeapType;
     heapDesc.NumDescriptors = m_NumDescriptorsPerHeap;
 
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> descriptorHeap;
+    ComPtr<ID3D12DescriptorHeap> descriptorHeap;
     ThrowIfFailed(device->CreateDescriptorHeap(&heapDesc, IID_PPV_ARGS(&descriptorHeap)));
     m_DescriptorHeapPool.emplace_back(descriptorHeap);
 

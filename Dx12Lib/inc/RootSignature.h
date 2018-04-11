@@ -8,7 +8,7 @@
 #include "d3dx12.h"
 
 #include <wrl.h>
-
+using namespace Microsoft::WRL;
 #include <vector>
 
 class RootSignature
@@ -20,7 +20,7 @@ public:
 
     virtual ~RootSignature();
 
-    Microsoft::WRL::ComPtr<ID3D12RootSignature> GetRootSignature() const
+    ComPtr<ID3D12RootSignature> GetRootSignature() const
     {
         return m_RootSignature;
     }
@@ -36,5 +36,5 @@ private:
     D3D12_ROOT_SIGNATURE_DESC1 m_RootSignatureDesc;
     D3D_ROOT_SIGNATURE_VERSION m_RootSignatureVersion;
     
-    Microsoft::WRL::ComPtr<ID3D12RootSignature> m_RootSignature;
+    ComPtr<ID3D12RootSignature> m_RootSignature;
 };

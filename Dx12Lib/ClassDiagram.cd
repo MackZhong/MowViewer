@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="CommandQueue">
+    <Position X="8.5" Y="0.5" Width="7.5" />
+    <NestedTypes>
+      <Struct Name="CommandQueue::CommandAllocatorEntry" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>inc\CommandQueue.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QiAAAADAAAAAAAAAAAIAAAACAAoCCQABAAIAAiIIAAA=</HashCode>
+      <FileName>inc\CommandQueue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CommandList">
+    <Position X="8.5" Y="6" Width="6.75" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAEAAAAAAAAAAAAAAAAAQAAIAAAABAACCIAAAAA=</HashCode>
+      <FileName>inc\CommandList.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Game">
+    <Position X="0.5" Y="0.5" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>kAAAGAAEAAEABQCBQAAAAAAAABjAAACAAAAAIIMAAQQ=</HashCode>
+      <FileName>inc\Game.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

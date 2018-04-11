@@ -9,7 +9,7 @@
 #include "d3dx12.h"
 
 #include <wrl.h>
-
+using namespace Microsoft::WRL;
 #include <cstdint>
 #include <memory>
 #include <queue>
@@ -75,9 +75,9 @@ protected:
 
 private:
     // Request a descriptor heap if one is available.
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> RequestDescriptorHeap();
+    ComPtr<ID3D12DescriptorHeap> RequestDescriptorHeap();
     // Create a new descriptor heap of no descriptor heap is available.
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> CreateDescriptorHeap();
+    ComPtr<ID3D12DescriptorHeap> CreateDescriptorHeap();
 
     // Compute the number of stale descriptors that need to be copied
     // to GPU visible descriptor heaps.
@@ -142,12 +142,12 @@ private:
     // before rendering or dispatch.
     uint32_t m_StaleDescriptorTableBitMask;
 
-    using DescriptorHeapPool = std::queue< Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> >;
+    using DescriptorHeapPool = std::queue< ComPtr<ID3D12DescriptorHeap> >;
 
     DescriptorHeapPool m_DescriptorHeapPool;
     DescriptorHeapPool m_AvailableDescriptorHeaps;
 
-    Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> m_CurrentDescriptorHeap;
+    ComPtr<ID3D12DescriptorHeap> m_CurrentDescriptorHeap;
     CD3DX12_GPU_DESCRIPTOR_HANDLE m_CurrentGPUDescriptorHandle;
     CD3DX12_CPU_DESCRIPTOR_HANDLE m_CurrentCPUDescriptorHandle;
 

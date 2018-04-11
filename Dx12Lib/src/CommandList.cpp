@@ -4,7 +4,7 @@
 
 #include <Application.h>
 
-CommandList::CommandList(D3D12_COMMAND_LIST_TYPE type, Microsoft::WRL::ComPtr<ID3D12CommandAllocator> allocator)
+CommandList::CommandList(D3D12_COMMAND_LIST_TYPE type, ComPtr<ID3D12CommandAllocator> allocator)
     : m_CommandListType(type)
     , m_CommandAllocator(allocator)
 {

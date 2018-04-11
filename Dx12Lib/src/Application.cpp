@@ -112,7 +112,7 @@ Application::~Application()
 	Flush();
 }
 
-Microsoft::WRL::ComPtr<IDXGIAdapter4> Application::GetAdapter(bool bUseWarp)
+ComPtr<IDXGIAdapter4> Application::GetAdapter(bool bUseWarp)
 {
 	ComPtr<IDXGIFactory4> dxgiFactory;
 	UINT createFactoryFlags = 0;
@@ -154,7 +154,7 @@ Microsoft::WRL::ComPtr<IDXGIAdapter4> Application::GetAdapter(bool bUseWarp)
 
 	return dxgiAdapter4;
 }
-Microsoft::WRL::ComPtr<ID3D12Device2> Application::CreateDevice(Microsoft::WRL::ComPtr<IDXGIAdapter4> adapter)
+ComPtr<ID3D12Device2> Application::CreateDevice(ComPtr<IDXGIAdapter4> adapter)
 {
 	ComPtr<ID3D12Device2> d3d12Device2;
 	ThrowIfFailed(D3D12CreateDevice(adapter.Get(), D3D_FEATURE_LEVEL_11_0, IID_PPV_ARGS(&d3d12Device2)));
@@ -288,8 +288,11 @@ std::shared_ptr<Window> Application::GetWindowByName(const std::wstring& windowN
 
 int Application::Run(std::shared_ptr<Game> pGame)
 {
-	if (!pGame->Initialize()) return 1;
-	if (!pGame->LoadContent()) return 2;
+	if (!pGame->Initialize() || !pGame->LoadContent())
+	{
+		pGame->Destroy();
+		return 2;
+	}
 
 	MSG msg = { 0 };
 	while (msg.message != WM_QUIT)
@@ -315,7 +318,7 @@ void Application::Quit(int exitCode)
 	PostQuitMessage(exitCode);
 }
 
-Microsoft::WRL::ComPtr<ID3D12Device2> Application::GetDevice() const
+ComPtr<ID3D12Device2> Application::GetDevice() const
 {
 	return m_d3d12Device;
 }
@@ -348,7 +351,7 @@ void Application::Flush()
 	m_CopyCommandQueue->Flush();
 }
 
-Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> Application::CreateDescriptorHeap(UINT numDescriptors, D3D12_DESCRIPTOR_HEAP_TYPE type)
+ComPtr<ID3D12DescriptorHeap> Application::CreateDescriptorHeap(UINT numDescriptors, D3D12_DESCRIPTOR_HEAP_TYPE type)
 {
 	D3D12_DESCRIPTOR_HEAP_DESC desc = {};
 	desc.Type = type;
@@ -356,7 +359,7 @@ Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> Application::CreateDescriptorHeap(U
 	desc.Flags = D3D12_DESCRIPTOR_HEAP_FLAG_NONE;
 	desc.NodeMask = 0;
 
-	Microsoft::WRL::ComPtr<ID3D12DescriptorHeap> descriptorHeap;
+	ComPtr<ID3D12DescriptorHeap> descriptorHeap;
 	ThrowIfFailed(m_d3d12Device->CreateDescriptorHeap(&desc, IID_PPV_ARGS(&descriptorHeap)));
 
 	return descriptorHeap;
